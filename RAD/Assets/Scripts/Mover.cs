@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField]float moveSpeed = 5f;
+    [SerializeField] float moveSpeed = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
         PrintInstructions();
-        
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Mover : MonoBehaviour
     void PrintInstructions()
     {
         Debug.Log("Welcome to my final project game");
-        Debug.Log("Move your player with WASD or arrow keys");
+        Debug.Log("Move your player with WASD keys");
         Debug.Log("And don't touch the walls"!);
     }
     void MovePlayer()
@@ -29,5 +29,6 @@ public class Mover : MonoBehaviour
         float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
         transform.Translate(xValue, 0, zValue);
+
     }
 }
